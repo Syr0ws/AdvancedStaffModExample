@@ -1,0 +1,67 @@
+staffmod:
+  vanish:
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      type: EYE_OF_ENDER
+      amount: 1
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: "§eVanish"
+        lore:
+          - "§eClick to §aenable §eor §cdisable §ethe vanish."
+  freeze:
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      type: BLAZE_ROD
+      amount: 1
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: "§eFreeze"
+        lore:
+          - "§eClick to §afreeze §eor §cunfreeze §ea player."
+  invsee:
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      type: CHEST
+      amount: 1
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: "§eInvsee"
+        lore:
+          - "§eClick on a §6player §eto see his inventory."
+  test-item:
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      type: STICK
+      amount: 1
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: "§eTest item"
+        lore:
+          - "§eA test item !"
+  previous-page:
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      type: ARROW
+      amount: 1
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: "§bPrevious Page"
+        lore:
+          - "§eClick to go on the §6previous page §eof the menu."
+  next-page:
+    item:
+      ==: org.bukkit.inventory.ItemStack
+      type: ARROW
+      amount: 1
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: "§bNext page"
+        lore:
+          - "§eClick to go on the §6next page §eof the menu."

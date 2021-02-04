@@ -1,0 +1,7 @@
+name: AdvancedStaffModExample
+author: Syrows
+version: 1.0.0
+main: fr.syrows.advancedstaffmodexample.AdvancedStaffModExample
+commands:
+  advancedstaffmod:
+    description: "A command used to enable or disable a configurable staff mod."
