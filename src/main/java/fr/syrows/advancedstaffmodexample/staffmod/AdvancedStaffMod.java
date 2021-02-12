@@ -32,7 +32,6 @@ public class AdvancedStaffMod extends PageableBukkitStaffMod implements Configur
     public void enable(Player holder) {
 
         this.registerItems(holder);
-        this.configure(this.getConfigurationSection());
 
         this.handler = this.createPlayerData();
         this.handler.save(holder);
@@ -78,7 +77,7 @@ public class AdvancedStaffMod extends PageableBukkitStaffMod implements Configur
                 .forEach(configurable -> configurable.configure(parent));
     }
 
-    public void registerItems(Player player) {
+   private void registerItems(Player player) {
 
         // Registering our items. The method registerItem(StaffModItem item)
         // must be performed on each item you want to register because an item
@@ -104,7 +103,7 @@ public class AdvancedStaffMod extends PageableBukkitStaffMod implements Configur
         this.configure(this.getConfigurationSection());
     }
 
-    public PlayerDataHandler createPlayerData() {
+    private PlayerDataHandler createPlayerData() {
 
         // This method has for goal to create a PlayerData object
         // which will store player state before enabling the staff mod.
