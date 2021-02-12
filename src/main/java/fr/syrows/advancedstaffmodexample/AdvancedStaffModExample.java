@@ -1,12 +1,12 @@
 package fr.syrows.advancedstaffmodexample;
 
 import fr.syrows.advancedstaffmodexample.commands.CommandAdvancedStaffMod;
-import fr.syrows.staffmodlib.StaffModManager;
+import fr.syrows.staffmodlib.bukkit.BukkitStaffModManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class AdvancedStaffModExample extends JavaPlugin {
 
-    private StaffModManager manager;
+    private BukkitStaffModManager manager;
 
     @Override
     public void onEnable() {
@@ -16,7 +16,7 @@ public class AdvancedStaffModExample extends JavaPlugin {
 
         // Creating a new StaffModManager instance which will
         // be used by all the staff mods.
-        this.manager = new StaffModManager(this);
+        this.manager = new BukkitStaffModManager(this);
 
         // Registering commands.
         this.registerCommands();

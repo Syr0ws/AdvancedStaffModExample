@@ -1,30 +1,31 @@
 package fr.syrows.advancedstaffmodexample.staffmod.items;
 
-import fr.syrows.staffmodlib.staffmod.PageableStaffMod;
-import fr.syrows.staffmodlib.staffmod.items.AbstractPageItem;
-import fr.syrows.staffmodlib.util.Configurable;
+import fr.syrows.staffmodlib.bukkit.configuration.Configurable;
+import fr.syrows.staffmodlib.bukkit.items.BukkitNavigationItem;
+import fr.syrows.staffmodlib.common.items.NavigationType;
+import fr.syrows.staffmodlib.common.staffmod.PageableStaffMod;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 
-public class PageItem extends AbstractPageItem implements Configurable {
+public class NavItem extends BukkitNavigationItem implements Configurable {
 
-    private final PageItemType type;
+    private final NavigationType type;
     private ItemStack item;
 
-    public PageItem(Player holder, Plugin plugin, PageableStaffMod staffMod, PageItemType type) {
-        super(holder, plugin, staffMod);
+    public NavItem(Plugin plugin, PageableStaffMod<Player, ItemStack> staffMod, NavigationType type) {
+        super(plugin, staffMod);
         this.type = type;
     }
 
     @Override
-    protected PageItemType getPageItemType() {
+    public NavigationType getNavigationType() {
         return this.type;
     }
 
     @Override
-    public ItemStack getItemStack() {
+    public ItemStack getItem() {
         return this.item.clone();
     }
 
@@ -33,7 +34,7 @@ public class PageItem extends AbstractPageItem implements Configurable {
 
         // If page type is PREVIOUS, then the key is 'previous-page'.
         // Else, the key is 'next-page'.
-        String key = this.type == PageItemType.PREVIOUS ? "previous-page" : "next-page";
+        String key = this.type == NavigationType.OPEN_PREVIOUS_PAGE ? "previous-page" : "next-page";
 
         ConfigurationSection section = parent.getConfigurationSection(key);
 

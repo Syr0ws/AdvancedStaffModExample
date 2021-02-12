@@ -1,21 +1,16 @@
 package fr.syrows.advancedstaffmodexample.staffmod.items;
 
-import fr.syrows.staffmodlib.staffmod.items.AbstractStaffModItem;
-import fr.syrows.staffmodlib.util.Configurable;
+import fr.syrows.staffmodlib.bukkit.configuration.Configurable;
+import fr.syrows.staffmodlib.bukkit.items.BukkitStaffModItem;
 import org.bukkit.configuration.ConfigurationSection;
-import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-public class TestItem extends AbstractStaffModItem implements Configurable {
+public class TestItem extends BukkitStaffModItem implements Configurable {
 
     private ItemStack item;
 
-    public TestItem(Player holder) {
-        super(holder);
-    }
-
     @Override
-    public ItemStack getItemStack() {
+    public ItemStack getItem() {
         return this.item.clone();
     }
 
