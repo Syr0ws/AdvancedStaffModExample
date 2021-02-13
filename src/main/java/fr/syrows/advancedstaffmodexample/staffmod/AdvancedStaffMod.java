@@ -33,25 +33,25 @@ public class AdvancedStaffMod extends PageableBukkitStaffMod implements Configur
 
         this.registerItems(holder);
 
+        // Saving player data.
         this.handler = this.createPlayerData();
         this.handler.save(holder);
         this.handler.clear(holder);
 
-        this.setItems(holder);
-
+        // Must be executed at the end to set the items.
         super.enable(holder);
     }
 
     @Override
     public void disable(Player holder) {
 
-        this.removeItems(holder);
+        // Must be executed first to remove the items.
+        super.disable(holder);
 
+        // Restoring player data.
         this.handler.clear(holder);
         this.handler.restore(holder);
         this.handler = null;
-
-        super.disable(holder);
     }
 
     @Override
