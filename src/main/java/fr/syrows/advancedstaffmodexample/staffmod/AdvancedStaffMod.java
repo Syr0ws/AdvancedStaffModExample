@@ -51,7 +51,7 @@ public class AdvancedStaffMod extends PageableBukkitStaffMod implements Configur
         // Restoring player data.
         this.handler.clear(holder);
         this.handler.restore(holder);
-        this.handler = null;
+        this.handler = null; // Avoiding reuse.
     }
 
     @Override
