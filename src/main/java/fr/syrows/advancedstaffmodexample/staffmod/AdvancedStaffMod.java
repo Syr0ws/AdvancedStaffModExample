@@ -66,11 +66,6 @@ public class AdvancedStaffMod extends PageableBukkitStaffMod implements Configur
 
     @Override
     public void configure(ConfigurationSection parent) {
-
-        // Configuring each item that implements Configurable.
-        // You can notice that the getAllItems() method is used
-        // instead of the getItems() which will only return the
-        // items of the current page.
         this.getPagination().getElements().stream()
                 .filter(item -> item instanceof Configurable)
                 .map(item -> (Configurable) item)
