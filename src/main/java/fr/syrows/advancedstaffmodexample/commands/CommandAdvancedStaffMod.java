@@ -1,8 +1,8 @@
 package fr.syrows.advancedstaffmodexample.commands;
 
 import fr.syrows.advancedstaffmodexample.staffmod.AdvancedStaffMod;
-import fr.syrows.staffmodlib.bukkit.BukkitStaffModManager;
 import fr.syrows.staffmodlib.common.staffmod.StaffMod;
+import fr.syrows.staffmodlib.common.staffmod.StaffModManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -15,9 +15,9 @@ import java.util.Optional;
 public class CommandAdvancedStaffMod implements CommandExecutor {
 
     private final Plugin plugin;
-    private final BukkitStaffModManager manager;
+    private final StaffModManager<Player, ItemStack> manager;
 
-    public CommandAdvancedStaffMod(Plugin plugin, BukkitStaffModManager manager) {
+    public CommandAdvancedStaffMod(Plugin plugin, StaffModManager<Player, ItemStack>  manager) {
         this.plugin = plugin;
         this.manager = manager;
     }

@@ -1,7 +1,6 @@
 package fr.syrows.advancedstaffmodexample.staffmod;
 
 import fr.syrows.advancedstaffmodexample.staffmod.items.*;
-import fr.syrows.staffmodlib.bukkit.BukkitStaffModManager;
 import fr.syrows.staffmodlib.bukkit.configuration.Configurable;
 import fr.syrows.staffmodlib.bukkit.data.*;
 import fr.syrows.staffmodlib.bukkit.items.BukkitStaffModItem;
@@ -9,6 +8,7 @@ import fr.syrows.staffmodlib.bukkit.staffmod.PageableBukkitStaffMod;
 import fr.syrows.staffmodlib.common.data.DataHandler;
 import fr.syrows.staffmodlib.common.items.NavigationItem;
 import fr.syrows.staffmodlib.common.items.NavigationType;
+import fr.syrows.staffmodlib.common.staffmod.StaffModManager;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -23,7 +23,7 @@ public class AdvancedStaffMod extends PageableBukkitStaffMod implements Configur
     private final Plugin plugin;
     private PlayerDataHandler handler;
 
-    public AdvancedStaffMod(BukkitStaffModManager manager, Plugin plugin) {
+    public AdvancedStaffMod(StaffModManager<Player, ItemStack> manager, Plugin plugin) {
         super(manager);
         this.plugin = plugin;
     }
